@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for ="item in todoItems" v-bind:class="item.priority">
+          <span>{{item.name}}</span>
+          <span v-if="item.priority==='highPrio'">High Priority</span>
+          <span v-if="item.priority==='medPrio'">Medium Priority</span>
+          <span v-if="item.priority==='lowPrio'">Low Priority</span>
+        </li>
+      </ul>
+
+      <form v-on:submit.prevent="addItem">
+        <label for="new-item">New to do item:</label>
+        <input type="text" id="new-item" v-model="newItem">
+
+        <input type="radio" id="highPrio" name="prio" value="highPrio" v-model="priority">
+        <label for="highPrio">High</label>
+        <input type="radio" id="medPrio" name="prio" value="medPrio" v-model="priority">
+        <label for="medPrio">Medium</label>
+        <input type="radio" id="lowPrio" name="prio" value="lowPrio" v-model="priority">
+        <label for="lowPrio">Low</label>
+
+        <input type="submit" value="Add Item">
+      </form>
+    </div>
+
+
+  </body>
+</html>
