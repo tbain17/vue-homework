@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: "dance", priority: "highPrio"},
         {name: "play", priority: "lowPrio"},
         {name: "eat", priority: "medPrio"}],
-      newItem: ""
+      newItem: "",
+      priority: "medPrio"
     },
     methods: {
       addItem: function() {

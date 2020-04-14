@@ -6,10 +6,21 @@ body {
   background-color: violet;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li.highPrio {
   color: red;
 }
 
 li.lowPrio {
   color: green;
+}
+
+li {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
