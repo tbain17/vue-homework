@@ -12,10 +12,22 @@ ul {
 
 li.highPrio {
   color: red;
+  font-weight: bold;
+  font-variant: small-caps;
+  border: 5px solid darkred;
+  background-color: pink;
 }
 
 li.lowPrio {
   color: green;
+  border: 2px solid lightgreen;
+  background-color: lightyellow;
+}
+
+li.medPrio {
+  color: blue;
+  border: 2px solid yellow;
+  background-color: orange;
 }
 
 li {

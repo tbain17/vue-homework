@@ -9,17 +9,20 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for ="item in todoItems" v-bind:class="item.priority">
+        <li v-for ="(item, index) in todoItems" v-bind:class="item.priority">
           <span>{{item.name}}</span>
           <span v-if="item.priority==='highPrio'">High Priority</span>
           <span v-if="item.priority==='medPrio'">Medium Priority</span>
           <span v-if="item.priority==='lowPrio'">Low Priority</span>
+          <span v-if="item.status==='complete'"> Complete!</span>
+          <span v-else> Incomplete!</span>
+          <button v-if="item.status==='incomplete'" v-on:click="completeItem(index)">Done!</button>
         </li>
       </ul>
 
       <form v-on:submit.prevent="addItem">
         <label for="new-item">New to do item:</label>
-        <input type="text" id="new-item" v-model="newItem">
+        <input type="text" required id="new-item" v-model="newItem">
 
         <input type="radio" id="highPrio" name="prio" value="highPrio" v-model="priority">
         <label for="highPrio">High</label>
